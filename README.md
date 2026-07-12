@@ -1,2 +1,18 @@
-# python_modules
-My solutions and implementations for the 42 Python Modules curriculum.
+
+## Description
+
+
+
+## Folders
+
+| Function | Description |
+| ---------- |-------------|
+|[Module-00](python-module-00/)|xxxx|
+|[x]()|xxxx|
+|[x]()|xxxx|
+|[x]()|xxxx|
+|[x]()|xxxx|
+|[x]()|xxxx|
+|[x]()|xxxx|
+|[x]()|xxxx|
+|[x]()|xxxx|
