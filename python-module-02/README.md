@@ -23,7 +23,7 @@ xx
 
 ## Resources
 
--[name](link)
+-[Flake8 Rules](https://www.flake8rules.com/)
 -[name](link)
 -[name](link)
 -[name](link)
