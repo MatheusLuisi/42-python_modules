@@ -16,6 +16,3 @@ def ft_harvest_total():
     day3 = int(input("Day 3 harvest: "))
     x = day1 + day2 + day3
     print(f"Total harvest: {x}")
-
-
-ft_harvest_total()

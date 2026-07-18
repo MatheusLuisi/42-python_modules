@@ -17,24 +17,32 @@ Introductory Python project where core language concepts (input/output, variable
 |[Exercise 4: Plant Age Check](ex4/ft_plant_age.py)|use if statement to evaluate if the plant is ready or not to be harvested|
 |[Exercise 5: Water Reminder](ex5/ft_water_reminder.py)|use if stament to evaluate if the plant needs water or not|
 |[Exercise 6: Count to Harvest](ex6/)|count how many days are left based on user input and `range()`|
-|[Exercise 7: Seed Inventory](ex7/ft_seed_inventory.py)|xxxx|
+|[Exercise 7: Seed Inventory](ex7/ft_seed_inventory.py)|based on input `unit` print a specific string|
 s
 
 
 ## Resources
 
 -[Flake8 Rules](https://www.flake8rules.com/)
+
 -[Python print() Function](https://www.w3schools.com/python/ref_func_print.asp)
+
 -[Learn X in Y minutes - Python](https://learnxinyminutes.com/python/)
+
 -[How to declare functions](https://www.w3schools.com/python/python_functions.asp)
+
 -[User Input](https://www.w3schools.com/python/python_user_input.asp)
+
 -[print() function](https://www.w3schools.com/python/ref_func_print.asp)
+
 -[int() function](https://www.w3schools.com/python/ref_func_int.asp)
+
 -[input() function](https://www.w3schools.com/python/ref_func_input.asp)
+
 -[if statements](https://www.w3schools.com/python/python_conditions.asp)
+
 -[range() function](https://www.w3schools.com/python/ref_func_range.asp)
+
 -[Recursion in Python](https://www.geeksforgeeks.org/python/recursion-in-python/)
--[name](link)
--[name](link)
--[name](link)
--[name](link)
+
+-[Python Else Statement](https://www.w3schools.com/python/python_if_else.asp)
