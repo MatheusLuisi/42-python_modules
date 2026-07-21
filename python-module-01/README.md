@@ -23,10 +23,26 @@ xx
 
 -[Flake8 Rules](https://www.flake8rules.com/)
 
--[What Does if __name__ == "__main__" Do in Python?](https://realpython.com/if-name-main-python/)
-
--[Python Classes and Objects](https://www.w3schools.com/python/python_classes.asp)
+-[What Does if __name__ == "__main__" Do in Python?](https://www.geeksforgeeks.org/python/what-does-the-if-__name__-__main__-do/)
 
 -[Classes](https://docs.python.org/3/tutorial/classes.html)
 
--[name](link)
+-[Python Classes and Objects](https://www.geeksforgeeks.org/python/python-classes-and-objects/)
+
+-[self in Python](https://www.geeksforgeeks.org/python/self-in-python-class/)
+
+-[__init__ in Python](https://www.geeksforgeeks.org/python/__init__-in-python/)
+
+-[Class Methods](https://www.w3schools.com/python/python_class_methods.asp)
+
+-[Python round() Function](https://www.geeksforgeeks.org/python/round-function-python/)
+
+-[How Do You Choose Python Function Names?](https://realpython.com/python-function-names/)
+
+-[]()
+
+-[]()
+
+-[]()
+
+-[]()
