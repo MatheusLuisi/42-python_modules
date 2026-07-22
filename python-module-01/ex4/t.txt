@@ -1,0 +1,12 @@
+$> python3 ft_garden_security.py
+
+=== Garden Security System ===
+
+Plant created: Rose: 15.0cm, 10 days old
+
+Height updated: 25cm
+
+Age updated: 30 days
+
+
+Current state: Rose: 25.0cm, 30 days old

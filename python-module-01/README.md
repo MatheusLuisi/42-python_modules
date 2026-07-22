@@ -39,10 +39,10 @@ xx
 
 -[How Do You Choose Python Function Names?](https://realpython.com/python-function-names/)
 
--[]()
+-[Python Encapsulation](https://www.geeksforgeeks.org/python/encapsulation-in-python/)
 
--[]()
+-[Acess Modifiers in Python: Public, Private and Protected](https://www.geeksforgeeks.org/python/access-modifiers-in-python-public-private-and-protected/)
 
--[]()
+-[isinstance() method - Python](https://www.geeksforgeeks.org/python/python-isinstance-method/)
 
 -[]()

@@ -7,29 +7,47 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/07/21 12:27:32 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/07/21 12:43:27 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/07/22 12:25:46 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
 class Plant:
 
-    def __init__(self, name, height, age):
+    def __init__(self, name, height, lifetime):
         self.name = name
-        self.height = round(height, 1)
-        self.age = age
+        self.height = height
+        self.lifetime = lifetime
 
     def show(self):
-        print(f"Created {self.name}: {self.height}cm, {self.age} days old")
+        print(f"{self.name}: {round(self.height, 1)}cm, {self.lifetime}days.")
 
+    def age(self):
+        self.lifetime += 1
 
-def ft_plant_factory(name: str, height: float, age: int):
-    input = Plant(name, height, age)
-    input.show()
+    def grow(self, rate):
+        self.height += rate
+
+    def grow_x_days(self, period, rate):
+        total_growth = round(period * rate, 1)
+        for period in range(1, period + 1):
+            self.grow(rate)
+            self.age()
+            print(f"=== Day {period} ===")
+            self.show()
+
+        return (total_growth)
 
 
 if __name__ == "__main__":
-    ft_plant_factory("Rose", 25.0, 30)
-    ft_plant_factory("Oak", 200.0, 365)
-    ft_plant_factory("Cactus", 5.0, 90)
-    ft_plant_factory("Sunflower", 80.0, 45)
-    ft_plant_factory("Fern", 15.0, 120)
+    print("=== Plant Factory Output")
+    plants = [
+                Plant("Rose", 25.0, 30),
+                Plant("Oak", 200.0, 365),
+                Plant("Cactus", 5.0, 90),
+                Plant("Sunflower", 80.0, 45),
+                Plant("Fern", 15.0, 120),
+                ]
+
+for x in plants:
+    print("Created: ", end='')
+    x.show()
