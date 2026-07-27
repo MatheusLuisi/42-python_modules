@@ -7,18 +7,18 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/07/21 09:11:29 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/07/22 12:29:46 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/07/27 12:31:02 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
 class Plant:
 
-    def __init__(self, name, height, lifetime):
+    def __init__(self, name: str, height: float, lifetime: int):
         self.name = name
         self.height = height
         self.lifetime = lifetime
 
-    def grow(self, rate):
+    def grow(self, rate: float):
         self.height += rate
 
     def age(self):
@@ -27,7 +27,7 @@ class Plant:
     def show(self):
         print(f"{self.name}: {round(self.height, 1)}cm, {self.lifetime}days.")
 
-    def grow_x_days(self, period, rate):
+    def grow_x_days(self, period: int, rate: float):
         total_growth = round(period * rate, 1)
         for period in range(1, period + 1):
             self.grow(rate)

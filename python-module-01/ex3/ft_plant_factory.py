@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+ d#!/usr/bin/env python3
 # ########################################################################### #
 #   shebang: 1                                                                #
 #                                                          :::      ::::::::  #
@@ -7,13 +7,13 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/07/21 12:27:32 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/07/22 12:25:46 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/07/27 15:08:37 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
 class Plant:
 
-    def __init__(self, name, height, lifetime):
+    def __init__(self, name: str, height: float, lifetime: int):
         self.name = name
         self.height = height
         self.lifetime = lifetime
@@ -46,7 +46,7 @@ if __name__ == "__main__":
                 Plant("Cactus", 5.0, 90),
                 Plant("Sunflower", 80.0, 45),
                 Plant("Fern", 15.0, 120),
-                ]
+            ]
 
 for x in plants:
     print("Created: ", end='')
