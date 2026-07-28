@@ -7,7 +7,7 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/07/22 12:33:11 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/07/27 16:51:20 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/07/28 14:34:17 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -44,10 +44,10 @@ class Plant:
         return self._days
 
     def grow(self) -> None:
-        self.height += self.rate
+        self._height += self.rate
 
     def age(self) -> None:
-        self.days += 1
+        self._days += 1
 
     def show(self) -> None:
         print(f"{self.name}: {self._height:.1f}cm, {self._days} days old.")
