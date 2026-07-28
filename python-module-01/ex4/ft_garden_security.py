@@ -11,155 +11,56 @@
 #                                                                             #
 # ########################################################################### #
 
-
-# ORIGINAL
-
-# class Plant:
-
-#     def __init__(self, name, height, lifetime):
-#         self.name = name
-#         self.height = height
-#         self.lifetime = lifetime
-
-#     def show(self):
-#         print(f"{self.name}: {round(self.height, 1)}cm, {self.lifetime}days.")
-
-#     def age(self):
-#         self.lifetime += 1
-
-#     def grow(self, rate):
-#         self.height += rate
-
-#     def grow_x_days(self, period, rate):
-#         total_growth = round(period * rate, 1)
-#         for days in range(1, period + 1):
-#             self.grow(rate)
-#             self.age()
-#             print(f"=== Day {period} ===")
-#             self.show()
-
-#         return (total_growth)
-
-# =============================
-
-    # def grow(self, rate: float):
-    #     x = (self.get_height() + rate)
-    #     self.set_height = x
-
-        # ensure plant height can not be negative
-        # ensure plant age can not be negative
-        # print error message from class when invalid values are provided
-        # leaving data unchanged or creating the plant with default values
-        # use encapsulation (not mangling)
-        # create a system to validade data before storing it
-
-# NEW
-
 class Plant:
 
-    def __init__(self, name: str, height: float, age: int):
-        self._name = name
-        self._height = None
-        self._age = None
+    def __init__(self, name: str, height: float, days: int, rate: float = 1.0):
+        self.name = name
+        self._height = 0.0
+        self._days = 0
+        self.set_height(height)
+        self.set_age(days)
+        self.rate = rate
 
+    def set_height(self, height) -> None:
+        if height < 0:
+            print(f"{self.name}: Error, height can't be negative")
+            print("Height update rejected")
+            return
+        self._height = height
+        print(f"Height updated: {height}cm")
 
-
-
-
-
-
-
-
-
-
-
-
-
-    def get_height(self):
+    def get_height(self) -> float:
         return self._height
 
-    def validade_height(self, height: float):
-        if not isinstance(height, float):
-            self.set_height(0)
-            print("Height update rejected")
-        elif height < 0:
-            print("Error, height can't be negative")
-            print("Height update rejected")
-        self.set_height(height)
-
-    def set_height(self, height: float):
-        self._height = height
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    def get_age(self):
-        return self._age
-
-    def validade_age(self, age: int):
-        if not isinstance(age, int):
-            self.set_height(0)
+    def set_age(self, days) -> None:
+        if days < 0:
+            print(f"{self.name}: Error, age can't be negative")
             print("Age update rejected")
-        elif age < 0:
-            print("Error, age can't be negative")
-            print("Age update rejected")
-        self.set_age(age)
+            return
+        self._days = days
+        print(f"Age updated: {days}days")
 
-    def set_age(self, age: int):
-        self._age = age
+    def get_age(self) -> int:
+        return self._days
 
+    def grow(self) -> None:
+        self.height += self.rate
 
+    def age(self) -> None:
+        self.days += 1
 
-
-
-
-
-
-
-
-
-    def show(self):
-        print(f"{self._name}: {self._height}cm, {self._age}days.")
-
-
-
-
-
-
-
-
-
-    def age(self, age: int):
-        if isinstance(self.validade_age(age)):
-            print(f"Age updated: {self._age}days")
-
-
-
-
-
-    def grow_x_days(self, period: int, rate: float) -> int:
-        total_growth = round(period * rate, 1)
-        for days in range(1, period + 1):
-            self.grow(rate)
-            self.age()
-            print(f"=== Day {period} ===")
-            self.show()
-
-        return (total_growth)
+    def show(self) -> None:
+        print(f"{self.name}: {self._height:.1f}cm, {self._days} days old.")
 
 
 if __name__ == "__main__":
-    rose = Plant("Rose", 25.0, 30)
+    print("=== Garden Security System ===")
+    rose = Plant("Rose", 15.0, 10)
+    print("Plant Created: ", end='')
     rose.show()
-    rose.age()
-    rose.grow_x_days(7, 0.8)
+    rose.set_height(25)
+    rose.set_age(30)
+    rose.set_height(-1)
+    rose.set_age(-1)
+    print("Current state: ", end='')
+    rose.show()

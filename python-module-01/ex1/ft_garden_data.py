@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # ########################################################################### #
-#   shebang: 1                                                                #
+#   shebang: 0                                                                #
 #                                                          :::      ::::::::  #
 #   ft_garden_data.py                                    :+:      :+:    :+:  #
 #                                                      +:+ +:+         +:+    #
@@ -13,13 +13,13 @@
 
 class Plant:
 
-    def __init__(self, name: str, height: float, age: int):
+    def __init__(self, name: str, height: float, days: int):
         self.name = name
         self.height = height
-        self.age = age
+        self.days = days
 
     def show(self):
-        print(f"{self.name}: {self.height}cm, {self.age}days.")
+        print(f"{self.name}: {self.height}cm, {self.days}days.")
 
 
 if __name__ == "__main__":

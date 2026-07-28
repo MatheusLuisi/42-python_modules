@@ -1,6 +1,5 @@
- d#!/usr/bin/env python3
 # ########################################################################### #
-#   shebang: 1                                                                #
+#   shebang: 0                                                                #
 #                                                          :::      ::::::::  #
 #   ft_plant_factory.py                                  :+:      :+:    :+:  #
 #                                                      +:+ +:+         +:+    #
@@ -13,41 +12,32 @@
 
 class Plant:
 
-    def __init__(self, name: str, height: float, lifetime: int):
+    def __init__(self, name: str, height: float, days: int, rate: float = 1.0):
         self.name = name
         self.height = height
-        self.lifetime = lifetime
+        self.days = days
+        self.rate = rate
 
-    def show(self):
-        print(f"{self.name}: {round(self.height, 1)}cm, {self.lifetime}days.")
+    def grow(self) -> None:
+        self.height += self.rate
 
-    def age(self):
-        self.lifetime += 1
+    def age(self) -> None:
+        self.days += 1
 
-    def grow(self, rate):
-        self.height += rate
-
-    def grow_x_days(self, period, rate):
-        total_growth = round(period * rate, 1)
-        for period in range(1, period + 1):
-            self.grow(rate)
-            self.age()
-            print(f"=== Day {period} ===")
-            self.show()
-
-        return (total_growth)
+    def show(self) -> None:
+        print(f"{self.name}: {self.height:.1f}cm, {self.days}days.")
 
 
 if __name__ == "__main__":
-    print("=== Plant Factory Output")
+    print("=== Plant Factory Output ===")
     plants = [
-                Plant("Rose", 25.0, 30),
-                Plant("Oak", 200.0, 365),
-                Plant("Cactus", 5.0, 90),
-                Plant("Sunflower", 80.0, 45),
-                Plant("Fern", 15.0, 120),
-            ]
+        Plant("Rose", 25.0, 30),
+        Plant("Oak", 200.0, 365),
+        Plant("Cactus", 5.0, 90),
+        Plant("Sunflower", 80.0, 45),
+        Plant("Fern", 15.0, 120),
+    ]
 
-for x in plants:
-    print("Created: ", end='')
-    x.show()
+    for plant in plants:
+        print("Created: ", end='')
+        plant.show()

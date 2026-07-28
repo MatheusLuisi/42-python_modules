@@ -13,33 +13,33 @@
 
 class Plant:
 
-    def __init__(self, name: str, height: float, lifetime: int):
+    def __init__(self, name: str, height: float, days: int, rate: float = 1.0):
         self.name = name
         self.height = height
-        self.lifetime = lifetime
+        self.days = days
+        self.rate = rate
 
-    def grow(self, rate: float):
-        self.height += rate
+    def grow(self) -> None:
+        self.height += self.rate
 
-    def age(self):
-        self.lifetime += 1
+    def age(self) -> None:
+        self.days += 1
 
-    def show(self):
-        print(f"{self.name}: {round(self.height, 1)}cm, {self.lifetime}days.")
-
-    def grow_x_days(self, period: int, rate: float):
-        total_growth = round(period * rate, 1)
-        for period in range(1, period + 1):
-            self.grow(rate)
-            self.age()
-            print(f"=== Day {period} ===")
-            self.show()
-
-        return (round(total_growth, 1))
+    def show(self) -> None:
+        print(f"{self.name}: {self.height:.1f}cm, {self.days}days.")
 
 
 if __name__ == "__main__":
+    rose = Plant("Rose", 25.0, 30, rate=0.8)
     print("=== Garden Plant Growth ===")
-    rose = Plant("Rose", 25.0, 30)
-    rose.grow_x_days(7, 0.8)
-    print(f"Growth this week: {rose.grow_x_days(7, 0.8)}")
+    rose.show()
+
+    initial_height = rose.height
+    for day in range(1, 8):
+        rose.grow()
+        rose.age()
+        print(f"=== Day {day} ===")
+        rose.show()
+
+    total_growth = round(rose.height - initial_height, 1)
+    print(f"Growth this week: {total_growth}cm")
