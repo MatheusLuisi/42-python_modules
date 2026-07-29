@@ -45,4 +45,6 @@ xx
 
 -[isinstance() method - Python](https://www.geeksforgeeks.org/python/python-isinstance-method/)
 
--[]()
+-[Python @staticmethod](https://www.geeksforgeeks.org/python/python-staticmethod/)
+
+-[Python Inner Classes](https://www.w3schools.com/python/python_class_inner.asp)

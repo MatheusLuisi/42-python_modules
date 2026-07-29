@@ -13,12 +13,12 @@
 
 class Plant:
 
-    def __init__(self, name: str, height: float, days: int):
+    def __init__(self, name: str, height: float, days: int) -> None:
         self.name = name
         self.height = height
         self.days = days
 
-    def show(self):
+    def show(self) -> None:
         print(f"{self.name}: {self.height}cm, {self.days}days.")
 
 
