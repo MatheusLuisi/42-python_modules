@@ -7,7 +7,7 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/07/22 12:33:11 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/07/28 14:34:17 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/07/30 09:47:25 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -27,7 +27,7 @@ class Plant:
         self.set_age(days)
         self.rate = rate
 
-    def set_height(self, height) -> None:
+    def set_height(self, height: float) -> None:
         if height < 0:
             print(f"{self.name}: Error, height can't be negative")
             print("Height update rejected")
@@ -38,7 +38,7 @@ class Plant:
     def get_height(self) -> float:
         return self._height
 
-    def set_age(self, days) -> None:
+    def set_age(self, days: int) -> None:
         if days < 0:
             print(f"{self.name}: Error, age can't be negative")
             print("Age update rejected")

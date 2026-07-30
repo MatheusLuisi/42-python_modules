@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # ########################################################################### #
 #   shebang: 0                                                                #
 #                                                          :::      ::::::::  #
@@ -7,7 +6,7 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/07/18 11:37:44 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/07/27 08:43:30 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/07/30 09:37:20 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -19,13 +18,13 @@ class Plant:
         self.days = days
 
     def show(self) -> None:
-        print(f"{self.name}: {self.height}cm, {self.days}days.")
+        print(f"{self.name}: {self.height:.1f}cm, {self.days}days.")
 
 
 if __name__ == "__main__":
-    rose = Plant("Rose", 25, 30)
-    sunflower = Plant("Sunflower, 80, 45")
-    cactus = Plant("Cactus", 15, 45)
+    rose = Plant("Rose", 25.0, 30)
+    sunflower = Plant("Sunflower", 80.0, 45)
+    cactus = Plant("Cactus", 15.0, 45)
     print("=== Garden Plant Registry ===")
     rose.show()
     sunflower.show()

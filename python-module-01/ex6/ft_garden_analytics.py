@@ -138,7 +138,7 @@ class Tree(Plant):
             ) -> None:
         super().__init__(name, height, days)
         self.trunk_diameter = trunk_diameter
-        self._stats = Tree.Stats()
+        self._stats: Tree.Stats = Tree.Stats()
 
     class Stats(Plant.Stats):
 
