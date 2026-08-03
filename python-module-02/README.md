@@ -10,11 +10,11 @@ xx
 
 | Function | Description |
 | ---------- |-------------|
-|[Exercise 0: Agricultural Data Validation]()|xxxx|
-|[Exercise 1: Agricultural Data Validation Pipeline]()|xxxx|
-|[Exercise 2: Different Types of Problems]()|xxxx|
-|[Exercise 3: Making Your Own Error Types]()|xxxx|
-|[Exercise 4: Finally Block - Always Clean Up]()|xxxx|
+|[Exercise 0: Agricultural Data Validation](ex0/ft_first_exception.py)|xxxx|
+|[Exercise 1: Agricultural Data Validation Pipeline](ex1/ft_raise_exception.py)|xxxx|
+|[Exercise 2: Different Types of Problems](ex2/ft_different_errors.py)|xxxx|
+|[Exercise 3: Making Your Own Error Types](ex3/ft_custom_errors.py)|xxxx|
+|[Exercise 4: Finally Block - Always Clean Up](ex4/ft_finally_block.py)|xxxx|
 
 ## Resources
 
