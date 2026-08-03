@@ -6,19 +6,17 @@
 
 xx
 
-## Functions 
+## Functions
 
 | Function | Description |
 | ---------- |-------------|
-|[x]()|xxxx|
-|[x]()|xxxx|
-|[x]()|xxxx|
-|[x]()|xxxx|
-|[x]()|xxxx|
-|[x]()|xxxx|
-|[x]()|xxxx|
-|[x]()|xxxx|
-|[x]()|xxxx|
+|[Exercise 0: Command Quest](ex0/ft_command_quest.py)|xxxx|
+|[Exercise 1: Score Cruncher](ex1/ft_score_analytics.py)|xxxx|
+|[Exercise 2: Position Tracker](ex2/ft_coordinate_system.py)|xxxx|
+|[Exercise 3: Achievement Hunter](ex3/ft_achievement_tracker.py)|xxxx|
+|[Exercise 4: Inventory Master](ex4/ft_inventory_system.py)|xxxx|
+|[Exercise 5: Stream Wizard](ex5/ft_data_stream.py)|xxxx|
+|[Exercise 6: Data Alchemist](ex6/ft_data_alchemist.py)|xxxx|
 
 
 ## Resources
@@ -28,4 +26,3 @@ xx
 -[name](link)
 -[name](link)
 -[name](link)
-
