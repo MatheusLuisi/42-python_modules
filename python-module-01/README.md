@@ -10,13 +10,13 @@ xx
 
 | Function | Description |
 | ---------- |-------------|
-|[Exercise 0: Plating Your First Seed](ex0/|x|
-|[Exercise 1: Garden Data Organizer](ex1/|x|
-|[Exercise 2: Plant Growth Simulator](ex2|x|
-|[Exercise 3: Plant Factory](ex3|x|
-|[Exercise 4: Garden Security System](ex4/|x|
-|[Exercise 5: Specialized Plant Types](ex5/|x|
-|[Exercise 6: Garden Analytics](ex6/|x|
+|[Exercise 0: Plating Your First Seed](ex0/ft_garden_intro.py)|x|
+|[Exercise 1: Garden Data Organizer](ex1/ft_garden_data.py)|x|
+|[Exercise 2: Plant Growth Simulator](ex2/ft_plant_growth.py)|x|
+|[Exercise 3: Plant Factory](ex3/ft_plant_factory.py)|x|
+|[Exercise 4: Garden Security System](ex4/ft_plant_security.py)|x|
+|[Exercise 5: Specialized Plant Types](ex5/ft_plant_types.py)|x|
+|[Exercise 6: Garden Analytics](ex6/ft_garden_analytics.py)|x|
 
 
 ## Resources

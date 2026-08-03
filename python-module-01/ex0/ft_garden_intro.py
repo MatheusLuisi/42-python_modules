@@ -19,4 +19,8 @@ def ft_garden_intro(name: str, height: int, age: int) -> None:
 
 
 if __name__ == "__main__":
-    ft_garden_intro('Rose', 25, 30)
+    plant_name = "Rose"
+    plant_height = 25
+    plant_age = 30
+
+    ft_garden_intro(plant_name, plant_height, plant_age)
