@@ -22,8 +22,8 @@ xx
 
 -[Python Built-in Exceptions](https://docs.python.org/3/library/exceptions.html)
 
+-[Error and exceptions](https://docs.python.org/3/tutorial/errors.html)
+
 -[Python Exceptions: An Introduction](https://realpython.com/python-exceptions/)
 
 -[Python Try Except](https://www.w3schools.com/python/python_try_except.asp)
-
--[name](link)
