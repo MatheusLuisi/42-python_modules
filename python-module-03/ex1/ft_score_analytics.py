@@ -7,7 +7,7 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/08/10 14:15:39 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/08/10 15:16:18 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/08/10 15:27:37 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -20,9 +20,15 @@ def main() -> None:
     for score in score_list:
         try:
 
+
     print('=== Player Score Analytics ===')
     print(f'Scores processed: {}')
-
+    print(f'Total players: {}')
+    print(f'Total score: {}')
+    print(f'Average Score: {}')
+    print(f'High score: {}')
+    print(f'Low score: {}')
+    print(f'Score range: {}')
 
 
 if __name__ == "__main__":
