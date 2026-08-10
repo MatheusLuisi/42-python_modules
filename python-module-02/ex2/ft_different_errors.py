@@ -7,7 +7,7 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/07/30 15:24:10 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/07/30 15:36:48 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/08/10 14:03:26 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -33,7 +33,7 @@ def test_error_types() -> None:
         except ValueError as error:
             print(f"Caught ValueError: {error}")
         except ZeroDivisionError as error:
-            print(f"Caught ZeroDivisionError: {error}")S
+            print(f"Caught ZeroDivisionError: {error}")
         except FileNotFoundError as error:
             print(f"Caught FileNotFoundError: {error}")
         except TypeError as error:

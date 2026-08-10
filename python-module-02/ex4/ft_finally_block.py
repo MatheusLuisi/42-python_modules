@@ -1,36 +1,15 @@
-# Your garden program needs to clean up resources, even if an error has occurred. The
-# finally block is perfect for this - it always runs, whether there was an error or not.
-# Write a function water_plant(plant_name) that:
-# • Tries to water the plant
-# • Succeeds if the plant name is capitalized
-# • Raises an error if the plant name is not capitalized (use your PlantError exception
-# from the previous exercise)
-# • Prints a message on success
-# Create a test_watering_system() function that:
-# • Opens the watering system (just print a message)
-# • Waters several plants using water_plant()
-# • Uses try/except/finally structure
-# • Handles errors if a plant name is invalid and can’t be watered. In that case, stop
-# the test and immediately return to main.
-# • Always closes the watering system in a finally block
-# • Shows that cleanup always happens, even when there’s an error
-
-
-# $> python3 ft_finally_block.py
-# === Garden Watering System ===
-# Testing valid plants...
-# Opening watering system
-# Watering Tomato: [OK]
-# Watering Lettuce: [OK]
-# Watering Carrots: [OK]
-# Closing watering system
-# Testing invalid plants...
-# Opening watering system
-# Watering Tomato: [OK]
-# Caught PlantError: Invalid plant name to water: 'lettuce'
-# .. ending tests and returning to main
-# Closing watering system
-# Cleanup always happens, even with errors!
+#!/usr/bin/env python3
+# ########################################################################### #
+#   shebang: 1                                                                #
+#                                                          :::      ::::::::  #
+#   ft_finally_block.py                                  :+:      :+:    :+:  #
+#                                                      +:+ +:+         +:+    #
+#   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
+#                                                  +#+#+#+#+#+   +#+          #
+#   Created: 2026/08/10 14:02:39 by mpinto-l            #+#    #+#            #
+#   Updated: 2026/08/10 14:03:42 by mpinto-l           ###   ########.fr      #
+#                                                                             #
+# ########################################################################### #
 
 class GardenError(Exception):
     def __init__(self, message: str = "Unknown garden error"):

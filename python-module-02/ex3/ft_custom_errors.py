@@ -1,29 +1,15 @@
-# Sometimes the built-in Python errors are not specific enough for your garden program.
-# You can create your own error types to make your code clearer and more helpful.
-# Create these simple custom exception classes:
-# • GardenError - A basic error for garden problems
-# • PlantError - For problems with plants (inherits from GardenError)
-# • WaterError - For problems with watering (inherits from GardenError)
-# Each custom exception should:
-# • Be a simple class that inherits from Exception (or GardenError)
-# • Have a specific default error message (e.g., “Unknown plant error”) if none is pro-
-# vided
-
-# Create functions that:
-# • Raise your custom errors in different situations
-# • Show how to catch your specific error types
-# • Demonstrate that catching GardenError catches all garden-related errors
-
-# $> python3 ft_custom_errors.py
-# === Custom Garden Errors Demo ===
-# Testing PlantError...
-# Caught PlantError: The tomato plant is wilting!
-# Testing WaterError...
-# Caught WaterError: Not enough water in the tank!
-# Testing catching all garden errors...
-# Caught GardenError: The tomato plant is wilting!
-# Caught GardenError: Not enough water in the tank!
-# All custom error types work correctly!
+#!/usr/bin/env python3
+# ########################################################################### #
+#   shebang: 1                                                                #
+#                                                          :::      ::::::::  #
+#   ft_custom_errors.py                                  :+:      :+:    :+:  #
+#                                                      +:+ +:+         +:+    #
+#   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
+#                                                  +#+#+#+#+#+   +#+          #
+#   Created: 2026/08/10 14:00:39 by mpinto-l            #+#    #+#            #
+#   Updated: 2026/08/10 14:02:02 by mpinto-l           ###   ########.fr      #
+#                                                                             #
+# ########################################################################### #
 
 class GardenError(Exception):
     def __init__(self, message: str = "Unknown garden error"):
