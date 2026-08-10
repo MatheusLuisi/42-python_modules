@@ -33,11 +33,18 @@
 # Cleanup always happens, even with errors!
 
 class GardenError(Exception):
-    pass
+    def __init__(self, message: str = "Unknown garden error"):
+        super().__init__(message)
 
 
 class PlantError(GardenError):
-    pass
+    def __init__(self, message: str = "Unknown plant error"):
+        super().__init__(message)
+
+
+class WaterError(GardenError):
+    def __init__(self, message: str = "Unknown water error"):
+        super().__init__(message)
 
 
 def water_plant(plant_name: str) -> None:
@@ -76,8 +83,7 @@ def test_watering_system() -> None:
     finally:
         print("Closing watering system")
 
-    print("Cleanup always happens, even with errors!")
-
 
 if __name__ == "__main__":
     test_watering_system()
+    print("Cleanup always happens, even with errors!")
