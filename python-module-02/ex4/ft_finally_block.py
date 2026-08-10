@@ -42,11 +42,6 @@ class PlantError(GardenError):
         super().__init__(message)
 
 
-class WaterError(GardenError):
-    def __init__(self, message: str = "Unknown water error"):
-        super().__init__(message)
-
-
 def water_plant(plant_name: str) -> None:
     if plant_name != plant_name.capitalize():
         raise PlantError(
@@ -80,6 +75,8 @@ def test_watering_system() -> None:
         water_plant("Carrots")
     except PlantError as error:
         print(f"Caught PlantError: {error}")
+        print(".. ending tests and returning to main")
+        return
     finally:
         print("Closing watering system")
 
