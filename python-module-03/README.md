@@ -26,3 +26,5 @@ xx
 -[name](link)
 -[name](link)
 -[name](link)
+https://docs.python.org/3/reference/import.html
+https://docs.python.org/3/library/sys.html
