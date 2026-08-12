@@ -28,3 +28,5 @@ xx
 -[name](link)
 https://docs.python.org/3/reference/import.html
 https://docs.python.org/3/library/sys.html
+https://docs.python.org/3/tutorial/datastructures.html
+https://www.youtube.com/watch?v=R-HLU9Fl5ug
