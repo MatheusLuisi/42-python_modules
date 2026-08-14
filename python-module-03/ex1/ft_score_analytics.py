@@ -14,22 +14,33 @@
 import sys
 
 
-def main() -> None:
-    score_list = sys.argv
+print("=== Player Score Analytics ===")
 
-    for score in score_list:
-        try:
+scores = []
 
+for arg in sys.argv[1:]:
+    try:
+        score = int(arg)
+        scores.append(score)
+    except ValueError:
+        print(f"Invalid parameter: '{arg}'")
 
-    print('=== Player Score Analytics ===')
-    print(f'Scores processed: {}')
-    print(f'Total players: {}')
-    print(f'Total score: {}')
-    print(f'Average Score: {}')
-    print(f'High score: {}')
-    print(f'Low score: {}')
-    print(f'Score range: {}')
+if not scores:
+    print(
+        "No scores provided. Usage: python3 ft_score_analytics.py "
+        "<score1> <score2> ..."
+    )
+else:
+    total = sum(scores)
+    average = total / len(scores)
+    high_score = max(scores)
+    low_score = min(scores)
+    score_range = high_score - low_score
 
-
-if __name__ == "__main__":
-    main()
+    print(f"Scores processed: {scores}")
+    print(f"Total players: {len(scores)}")
+    print(f"Total score: {total}")
+    print(f"Average score: {average}")
+    print(f"High score: {high_score}")
+    print(f"Low score: {low_score}")
+    print(f"Score range: {score_range}")
