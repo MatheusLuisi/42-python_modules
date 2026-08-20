@@ -31,3 +31,5 @@ https://docs.python.org/3/library/sys.html
 https://docs.python.org/3/tutorial/datastructures.html
 https://www.youtube.com/watch?v=R-HLU9Fl5ug
 https://www.w3schools.com/python/python_ref_string.asp
+https://www.w3schools.com/python/python_tuples.asp
+https://www.w3schools.com/python/module_random.asp

@@ -14,18 +14,23 @@
 import sys
 
 
-program_name = sys.argv[0]
-total_arguments = len(sys.argv)
-arguments_received = total_arguments - 1
+def main() -> None:
+    program_name = sys.argv[0]
+    total_arguments = len(sys.argv)
+    arguments_received = total_arguments - 1
 
-print('=== Command Quest ===')
-print(f'Program name: {program_name}')
-print(f'Arguments received: {arguments_received}')
-if total_arguments > 1:
-    i = 1
-    while i < total_arguments:
-        print(f'Argument {i}: {sys.argv[i]}')
-        i += 1
-else:
-    print('No arguments provided!')
-print(f'Total arguments: {total_arguments}')
+    print('=== Command Quest ===')
+    print(f'Program name: {program_name}')
+    print(f'Arguments received: {arguments_received}')
+    if total_arguments > 1:
+        i = 1
+        while i < total_arguments:
+            print(f'Argument {i}: {sys.argv[i]}')
+            i += 1
+    else:
+        print('No arguments provided!')
+    print(f'Total arguments: {total_arguments}')
+
+
+if __name__ == "__main__":
+    main()
