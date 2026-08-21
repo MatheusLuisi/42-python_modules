@@ -7,7 +7,7 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/08/10 14:02:39 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/08/10 14:03:42 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/08/21 11:56:54 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -23,15 +23,13 @@ class PlantError(GardenError):
 
 def water_plant(plant_name: str) -> None:
     if plant_name != plant_name.capitalize():
-        raise PlantError(
-            f"Invalid plant name to water: '{plant_name}'"
-        )
+        raise PlantError(f"Invalid plant name to water: '{plant_name}'")
 
     print(f"Watering {plant_name}: [OK]")
 
 
 def test_watering_system() -> None:
-    print("=== Garden Watering System ===")
+    print("=== Garden Watering System ===\n")
 
     print("Testing valid plants...")
     print("Opening watering system")
@@ -42,10 +40,11 @@ def test_watering_system() -> None:
         water_plant("Carrots")
     except PlantError as error:
         print(f"Caught PlantError: {error}")
+        print(".. ending tests and returning to main")
     finally:
         print("Closing watering system")
 
-    print("Testing invalid plants...")
+    print("\nTesting invalid plants...")
     print("Opening watering system")
 
     try:
@@ -62,4 +61,4 @@ def test_watering_system() -> None:
 
 if __name__ == "__main__":
     test_watering_system()
-    print("Cleanup always happens, even with errors!")
+    print("\nCleanup always happens, even with errors!")

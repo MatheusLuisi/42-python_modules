@@ -7,7 +7,7 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/08/10 14:00:39 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/08/10 14:02:02 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/08/21 11:57:17 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -27,7 +27,7 @@ class WaterError(GardenError):
 
 
 def test_custom_errors() -> None:
-    print("=== Custom Garden Errors Demo ===")
+    print("=== Custom Garden Errors Demo ===\n")
 
     print("Testing PlantError...")
     try:
@@ -53,7 +53,7 @@ def test_custom_errors() -> None:
     except GardenError as error:
         print(f"Caught GardenError: {error}")
 
-    print("All custom error types work correctly!")
+    print("\nAll custom error types work correctly!")
 
 
 if __name__ == "__main__":
