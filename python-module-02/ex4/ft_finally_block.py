@@ -7,7 +7,7 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/08/10 14:02:39 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/08/21 11:56:54 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/09/02 10:19:38 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -41,6 +41,7 @@ def test_watering_system() -> None:
     except PlantError as error:
         print(f"Caught PlantError: {error}")
         print(".. ending tests and returning to main")
+        return
     finally:
         print("Closing watering system")
 
