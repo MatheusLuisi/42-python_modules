@@ -34,3 +34,4 @@ https://www.w3schools.com/python/python_ref_string.asp
 https://www.w3schools.com/python/python_tuples.asp
 https://www.w3schools.com/python/module_random.asp
 https://www.w3schools.com/python/ref_random_randint.asp
+https://www.w3schools.com/python/ref_keyword_yield.asp
