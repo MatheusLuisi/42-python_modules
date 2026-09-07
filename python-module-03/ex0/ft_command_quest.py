@@ -28,7 +28,7 @@ def main() -> None:
             print(f'Argument {i}: {sys.argv[i]}')
             i += 1
     else:
-        print('No arguments provided')
+        print('No arguments provided!')
     print(f'Total arguments: {total_arguments}')
 
 

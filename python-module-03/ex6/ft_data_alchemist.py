@@ -28,32 +28,28 @@ def main() -> None:
 
     print(f'Initial list of players: {initial_players}')
 
-    all_capitalized = []
-    for name in initial_players:
-        all_capitalized.append(name.capitalize())
-    print(f'New list with all names capiralized: {all_capitalized}')
+    all_capitalized = [name.capitalize() for name in initial_players]
+    print(f"New list with all names capitalized:{all_capitalized}")
 
-    originally_capitalized = []
-    for name in initial_players:
-        if name[0].isupper():
-            originally_capitalized.append(name)
+    originally_capitalized = [
+        name for name in initial_players if name[0].isupper()
+    ]
     print(f'New list of captalized names only: {originally_capitalized}')
 
-    score_dict = {}
-    for name in all_capitalized:
-        score_dict[name] = random.randint(1, 1000)
+    score_dict = {
+        name: random.randint(1, 1000) for name in all_capitalized
+    }
     print(f'\nScore dict: {score_dict}')
 
-    total_score = 0
-    for name in score_dict:
-        total_score += score_dict[name]
+    total_score = sum(score_dict[name] for name in score_dict)
     avg_score = total_score / len(score_dict)
     print(f'Score average is {round(avg_score, 2)}')
 
-    high_scores = {}
-    for name in score_dict:
-        if score_dict[name] > avg_score:
-            high_scores[name] = score_dict[name]
+    high_scores = {
+        name: score_dict[name]
+        for name in score_dict
+        if score_dict[name] > avg_score
+    }
     print(f'\nHigh scores: {high_scores}')
 
 

@@ -21,7 +21,7 @@ def main() -> None:
     for arg in sys.argv[1:]:
         try:
             score = int(arg)
-            scores.append(score)
+            scores = scores + [score]
         except ValueError:
             print(f"Invalid parameter: '{arg}'")
 
