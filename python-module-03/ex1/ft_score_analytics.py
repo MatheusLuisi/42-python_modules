@@ -17,7 +17,7 @@ import sys
 def main() -> None:
     print('=== Player Score Analytics ===')
 
-    scores = []
+    scores: list[int] = []
     for arg in sys.argv[1:]:
         try:
             score = int(arg)
