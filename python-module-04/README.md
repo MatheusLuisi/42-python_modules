@@ -30,3 +30,4 @@ https://www.w3schools.com/PYTHON/ref_func_open.asp
 https://docs.python.org/3/tutorial/inputoutput.html?spm=a2ty_o01.29997173.0.0.1f6055fbS6hnRi#reading-and-writing-files
 https://realpython.com/ref/builtin-exceptions/filenotfounderror/
 https://www.youtube.com/watch?v=TnoYJQmkKKQ
+https://www.geeksforgeeks.org/python/how-to-print-to-stderr-and-stdout-in-python/

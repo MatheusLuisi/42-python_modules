@@ -1,3 +1,15 @@
+#!/usr/bin/env python3
+# ########################################################################### #
+#   shebang: 1                                                                #
+#                                                          :::      ::::::::  #
+#   ft_ancient_text.py                                   :+:      :+:    :+:  #
+#                                                      +:+ +:+         +:+    #
+#   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
+#                                                  +#+#+#+#+#+   +#+          #
+#   Created: 2026/09/09 10:02:30 by mpinto-l            #+#    #+#            #
+#   Updated: 2026/09/09 11:23:50 by mpinto-l           ###   ########.fr      #
+#                                                                             #
+# ########################################################################### #
 
 import sys
 import typing
@@ -14,7 +26,7 @@ def main() -> None:
     print(f"Accessing file '{file_path}'")
 
     try:
-        file: typing.IO = open(file_path, "r")
+        file: typing.IO[str] = open(file_path, "r")
         content = file.read()
 
         print('---')
