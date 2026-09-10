@@ -25,7 +25,7 @@ xx
 
 https://www.geeksforgeeks.org/python/how-to-use-sys-argv-in-python/
 https://realpython.com/videos/reading-and-writing-files-python-overview/
-
+https://mimo.org/tutorials/python
 https://www.w3schools.com/PYTHON/ref_func_open.asp
 https://docs.python.org/3/tutorial/inputoutput.html?spm=a2ty_o01.29997173.0.0.1f6055fbS6hnRi#reading-and-writing-files
 https://realpython.com/ref/builtin-exceptions/filenotfounderror/
