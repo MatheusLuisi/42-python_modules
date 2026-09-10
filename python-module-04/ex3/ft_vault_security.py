@@ -7,7 +7,7 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/09/10 10:08:29 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/09/10 10:59:52 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/09/10 11:18:55 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -24,11 +24,11 @@ def secure_archive(
         try:
             with open(file_path, "w") as file:
                 file.write(to_write)
-                return True, "'Content succesfully written to file'"
+                return True, 'Content successfully written to file'
         except OSError as error:
             return False, f"{error}"
     else:
-        return False, "No file provided"
+        return False, "Invalid mode."
 
 
 def main() -> None:

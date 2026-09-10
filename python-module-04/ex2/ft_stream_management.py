@@ -7,7 +7,7 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/09/09 11:18:57 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/09/09 12:40:15 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/09/10 11:16:53 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -48,7 +48,7 @@ def main() -> None:
         file.close()
         print(f"File '{file_path}' closed.\n")
 
-        print("Traform data:")
+        print("Transform data:")
         content = "\n".join(line + "#" for line in content.splitlines())
         print('---')
         print(content)
@@ -62,14 +62,15 @@ def main() -> None:
         if not file_to_save:
             print("Not saving data.")
         else:
-            print(f"Saving data to '{file_to_save}'")
-            print(f"Data saved in file '{file_to_save}'")
             new_file: typing.IO[str] = open(file_to_save, "w")
             new_file.write(content)
             new_file.close()
+            print(f"Saving data to '{file_to_save}'")
+            print(f"Data saved in file '{file_to_save}'")
 
     except OSError as error:
         print_to_stderr(f"Error opening file '{file_to_save}': {error}")
+        print("Data not saved.")
 
 
 if __name__ == "__main__":
