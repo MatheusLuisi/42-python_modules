@@ -7,7 +7,7 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/08/21 12:38:14 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/09/10 14:49:04 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/09/15 11:48:41 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -28,6 +28,7 @@ class DataProcessor(ABC):
         ...
 
     def output(self) -> tuple[int, str]:
+        ...
 
 
 class NumericProcessor(DataProcessor):
@@ -44,7 +45,10 @@ class NumericProcessor(DataProcessor):
                     return False
             return True
         else:
-            return isinstance(data, (int, float)) and not isinstance(data, bool)
+            return (
+                isinstance(data, (int, float))
+                and not isinstance(data, bool)
+                )
 
     def ingest(self, data: int | float) -> None:
         if not self.validate(data):
@@ -57,10 +61,18 @@ class TextProcessor(DataProcessor):
         super.__init__(data)
 
     def validate(self, data: Any) -> bool:
-        return isinstance(data, str)
+        if isinstance(data, list):
+            for item in data:
+                if not isinstance(item, (str)):
+                    return False
+            return True
+        else:
+            return isinstance(data, (str))
 
 
     def ingest(self, data: str) -> None:
+
+
 
 class LogProcesssor(DataProcessor):
     def __init__ (self, data: Any):
