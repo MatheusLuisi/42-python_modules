@@ -7,7 +7,7 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/08/21 12:38:14 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/10/01 13:46:32 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/10/01 13:48:55 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -176,7 +176,7 @@ class DataStream:
                 print(f"DataStream error - Can't process element: {element}")
 
     def print_processors_stats(self) -> None:
-        print("== DataStream statistics ==")
+        print("\n== DataStream statistics ==")
         if not self._processors:
             print("No processor found, no data")
             return

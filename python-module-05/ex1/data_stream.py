@@ -7,7 +7,7 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/08/21 12:38:14 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/10/01 13:44:39 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/10/01 13:48:03 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -90,7 +90,7 @@ class TextProcessor(DataProcessor):
 
     def ingest(self, data: str | list[str]) -> None:
         if not self.validate(data):
-            raise ValueError('Improper text data.')
+            raise ValueError('Improper text data')
         values_to_ingest: list[str]
         if isinstance(data, list):
             values_to_ingest = data
