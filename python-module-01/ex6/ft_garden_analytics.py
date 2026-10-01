@@ -116,15 +116,15 @@ class Seed(Flower):
             growth_rate: float,
             ) -> None:
         super().__init__(name, height, days, color, growth_rate)
-        self.seeds = 0
+        self.seedata_stream = 0
 
     def bloom(self) -> None:
         super().bloom()
-        self.seeds = 42
+        self.seedata_stream = 42
 
     def show(self) -> None:
         super().show()
-        print(f"Seeds: {self.seeds}")
+        print(f"Seedata_stream: {self.seedata_stream}")
 
 
 class Tree(Plant):

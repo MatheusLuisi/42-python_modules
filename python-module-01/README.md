@@ -33,7 +33,7 @@ xx
 
 -[__init__ in Python](https://www.geeksforgeeks.org/python/__init__-in-python/)
 
--[Class Methods](https://www.w3schools.com/python/python_class_methods.asp)
+-[Class Methodata_stream](https://www.w3schools.com/python/python_class_methodata_stream.asp)
 
 -[Python round() Function](https://www.geeksforgeeks.org/python/round-function-python/)
 

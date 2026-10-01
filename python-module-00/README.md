@@ -15,7 +15,7 @@ Introductory Python project where core language concepts (input/output, variable
 |[Exercise 2: Garden Plot Area](ex2/ft_plot_area.py)|calculate the plot area using `int()` to transform the user input|
 |[Exercise 3: Harvest Total](ex3/ft_harvest_total.py)|Calculate Total harvest based on user input|
 |[Exercise 4: Plant Age Check](ex4/ft_plant_age.py)|use if statement to evaluate if the plant is ready or not to be harvested|
-|[Exercise 5: Water Reminder](ex5/ft_water_reminder.py)|use if stament to evaluate if the plant needs water or not|
+|[Exercise 5: Water Reminder](ex5/ft_water_reminder.py)|use if stament to evaluate if the plant needata_stream water or not|
 |[Exercise 6: Count to Harvest](ex6/)|count how many days are left based on user input and `range()`|
 |[Exercise 7: Seed Inventory](ex7/ft_seed_inventory.py)|based on input `unit` print a specific string|
 s
