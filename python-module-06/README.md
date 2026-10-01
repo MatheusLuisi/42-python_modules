@@ -6,7 +6,7 @@
 
 xx
 
-## Functions 
+## Functions
 
 | Function | Description |
 | ---------- |-------------|
@@ -29,3 +29,15 @@ xx
 -[name](link)
 -[name](link)
 
+https://realpython.com/python-init-py/
+
+https://realpython.com/absolute-vs-relative-python-imports/
+
+https://www.youtube.com/watch?v=6Gwc9Yqj1P4
+
+https://docs.python.org/3/library/sys_path_init.html
+
+https://www.geeksforgeeks.org/python/sys-path-in-python/
+
+
+https://dev.to/vivekjami/circular-imports-in-python-the-architecture-killer-that-breaks-production-539j
