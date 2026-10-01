@@ -22,3 +22,12 @@ xx
 -[name](link)
 -[name](link)
 -[name](link)
+https://typing.python.org/en/latest/spec/protocol.html
+
+https://stackoverflow.com/questions/1602934/check-if-a-given-key-already-exists-in-a-dictionary
+
+https://www.w3schools.com/python/python_dictionaries_access.asp
+
+https://www.geeksforgeeks.org/python/python-all-function/
+
+https://www.w3schools.com/python/ref_list_pop.asp

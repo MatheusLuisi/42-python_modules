@@ -7,7 +7,7 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/08/21 12:38:14 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/09/30 15:36:09 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/10/01 13:04:09 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -73,7 +73,7 @@ class TextProcessor(DataProcessor):
         else:
             return isinstance(data, (str))
 
-    def ingest(self, data: str) -> None:
+    def ingest(self, data: str | list[str]) -> None:
         if not self.validate(data):
             raise ValueError('Improper text data.')
         values_to_ingest: list[str]
@@ -86,7 +86,7 @@ class TextProcessor(DataProcessor):
             self._total_ingested += 1
 
 
-class LogProcesssor(DataProcessor):
+class LogProcessor(DataProcessor):
     def validate(self, data: Any) -> bool:
         if isinstance(data, dict):
             return "log_level" in data and "log_message" in data
@@ -108,8 +108,8 @@ class LogProcesssor(DataProcessor):
         else:
             values_to_ingest = [data]
         for value in values_to_ingest:
-            formated_message = f"{value['log_level']}: {value['log_message']}"
-            self._data_stored.append((self._total_ingested, formated_message))
+            formatted_message = f"{value['log_level']}: {value['log_message']}"
+            self._data_stored.append((self._total_ingested, formatted_message))
             self._total_ingested += 1
 
 
@@ -121,7 +121,7 @@ def test_numeric() -> None:
     print(f"Trying to validate input 'Hello': {numeric.validate('Hello')}")
     print("Test invalid ingestion of string 'foo' without prior validation:")
     try:
-        numeric.ingest("foo")
+        numeric.ingest("foo")  # type: ignore[arg-type]
     except ValueError as error:
         print(f'Got exception: {error}')
 
@@ -145,11 +145,11 @@ def test_text() -> None:
     print('Extracting 1 value...')
     for _ in range(1):
         index, value = text.output()
-        print(f'Text value: {index}: {value}')
+        print(f'Text value {index}: {value}')
 
 
 def test_log() -> None:
-    log = LogProcesssor()
+    log = LogProcessor()
 
     print('\nTesting Log Processor...')
     print(f"Trying to validate input 'Hello': {log.validate('Hello')}")
@@ -169,7 +169,7 @@ def test_log() -> None:
         print(f'Log entry {index}: {message}')
 
 
-def test_data() -> None:
+def main() -> None:
     print('=== Code Nexus - Data Processor ===\n')
     test_numeric()
     test_text()
@@ -177,4 +177,4 @@ def test_data() -> None:
 
 
 if __name__ == "__main__":
-    test_data()
+    main()
