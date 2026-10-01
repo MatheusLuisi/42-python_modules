@@ -7,7 +7,7 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/08/21 12:38:14 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/10/01 13:04:09 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/10/01 13:45:54 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -126,7 +126,7 @@ def test_numeric() -> None:
         print(f'Got exception: {error}')
 
     numeric_data: list[int | float] = [1, 2, 3, 4, 5]
-    print(f"Processing Data: {numeric_data}")
+    print(f"Processing data: {numeric_data}")
     numeric.ingest(numeric_data)
     print('Extracting 3 values...')
     for _ in range(3):

@@ -7,7 +7,7 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/08/21 12:38:14 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/10/01 13:01:54 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/10/01 13:46:32 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -63,7 +63,7 @@ class NumericProcessor(DataProcessor):
 
     def ingest(self, data: int | float | list[int | float]) -> None:
         if not self.validate(data):
-            raise ValueError('Improper numeric data.')
+            raise ValueError('Improper numeric data')
         values_to_ingest: list[int | float]
         if isinstance(data, list):
             values_to_ingest = data
@@ -90,7 +90,7 @@ class TextProcessor(DataProcessor):
 
     def ingest(self, data: str | list[str]) -> None:
         if not self.validate(data):
-            raise ValueError('Improper text data.')
+            raise ValueError('Improper text data')
         values_to_ingest: list[str]
         if isinstance(data, list):
             values_to_ingest = data
@@ -127,8 +127,8 @@ class LogProcessor(DataProcessor):
         else:
             values_to_ingest = [data]
         for value in values_to_ingest:
-            formated_message = f"{value['log_level']}: {value['log_message']}"
-            self._data_stored.append((self._total_ingested, formated_message))
+            formatted_message = f"{value['log_level']}: {value['log_message']}"
+            self._data_stored.append((self._total_ingested, formatted_message))
             self._total_ingested += 1
 
 
@@ -143,7 +143,7 @@ class CSVExportPlugin:
             return
 
         values = [item[1] for item in data]
-        csv_line = ", ".join(values)
+        csv_line = ",".join(values)
         print("CSV Output:")
         print(csv_line)
 
@@ -173,7 +173,7 @@ class DataStream:
                     processor.ingest(element)
                     break
             else:
-                print(f"DataStream error: Can't process element: {element}")
+                print(f"DataStream error - Can't process element: {element}")
 
     def print_processors_stats(self) -> None:
         print("== DataStream statistics ==")
@@ -182,7 +182,7 @@ class DataStream:
             return
         for processor in self._processors:
             total = processor.get_total_ingested()
-            remaining = processor.get_data_stored()
+            remaining = len(processor.get_data_stored())
             print(
                 f"{processor.name}: total {total} items processed, "
                 f"remaining {remaining} on processor"
@@ -202,7 +202,7 @@ class DataStream:
 
 
 def main() -> None:
-    print("=== Code Nexus Data Stream ===")
+    print("=== Code Nexus - Data Pipeline ===")
 
     print("\nInitialize Data Stream...\n")
     data_stream = DataStream()
