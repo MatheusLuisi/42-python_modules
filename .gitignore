@@ -3,3 +3,4 @@ instructions-mod3.md
 lazygit
 .gitignore
 t.txt
+__pycache__
