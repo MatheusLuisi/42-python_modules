@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+# ########################################################################### #
+#   shebang: 1                                                                #
+#                                                          :::      ::::::::  #
+#   ft_alembic_4.py                                      :+:      :+:    :+:  #
+#                                                      +:+ +:+         +:+    #
+#   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
+#                                                  +#+#+#+#+#+   +#+          #
+#   Created: 2026/10/05 11:42:17 by mpinto-l            #+#    #+#            #
+#   Updated: 2026/10/05 12:52:13 by mpinto-l           ###   ########.fr      #
+#                                                                             #
+# ########################################################################### #
+
+import alchemy
+
+
+def main() -> None:
+    print("=== Alembic 4 ===")
+    print("Accessing the alchemy module using 'import alchemy'")
+    print(f"Testing create_air: {alchemy.create_air()}")
+
+    print("Now show that not all functions can be reached")
+    print("This will raise an exception!")
+    print(f"Testing the hidden create_earth: {alchemy.create_earth()}")
+
+
+if __name__ == "__main__":
+    main()
