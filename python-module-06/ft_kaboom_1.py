@@ -7,11 +7,11 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/10/06 13:03:28 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/10/06 13:11:24 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/10/06 17:27:46 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
-from alchemy.grimoire.dark_spellbook import dark_spell_record  # noqa: E402
+from alchemy.grimoire.dark_spellbook import dark_spell_record
 
 
 def main() -> None:
