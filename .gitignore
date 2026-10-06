@@ -4,3 +4,4 @@ lazygit
 .gitignore
 t.txt
 __pycache__
+test.py
