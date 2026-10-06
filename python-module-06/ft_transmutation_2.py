@@ -2,19 +2,22 @@
 # ########################################################################### #
 #   shebang: 1                                                                #
 #                                                          :::      ::::::::  #
-#   ft_alembic_6.py                                      :+:      :+:    :+:  #
+#   ft_transmutation_2.py                                :+:      :+:    :+:  #
 #                                                      +:+ +:+         +:+    #
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
-#   Created: 2026/10/05 11:43:52 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/10/05 11:44:00 by mpinto-l           ###   ########.fr      #
+#   Created: 2026/10/06 11:34:15 by mpinto-l            #+#    #+#            #
+#   Updated: 2026/10/06 11:34:56 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
-import elements
+import alchemy
+
 
 def main() -> None:
-    print("=== Alembic 6 ===")
+    print("===Transmutation 2 ===")
+    print("Import alchemy module only")
+    print(f"Testing lead to gold: {alchemy.lead_to_gold()}")
 
 
 if __name__ == "__main__":
