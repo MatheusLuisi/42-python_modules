@@ -1,11 +1,8 @@
 from abc import ABC, abstractmethod
-from typing import TypeVar, Generic
-
-Type = TypeVar("Type")
 
 
-class Creature(ABC, Generic[Type]):
-    def __init__(self, name: str, creature_type: Type) -> None:
+class Creature(ABC):
+    def __init__(self, name: str, creature_type: str) -> None:
         self.name = name
         self.creature_type = creature_type
 
