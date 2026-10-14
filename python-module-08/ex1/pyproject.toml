@@ -1,0 +1,13 @@
+
+[tool.poetry]
+name = "matrix-project"
+version = "0.1.0"
+description = "Matrix data analysis and visualization"
+authors = ["Your Name <you@example.com>"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+numpy = "*"
+pandas = "*"
+matplotlib = "*"
