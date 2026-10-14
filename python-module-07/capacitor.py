@@ -1,3 +1,16 @@
+#!/usr/bin/env python3
+# ########################################################################### #
+#   shebang: 1                                                                #
+#                                                          :::      ::::::::  #
+#   capacitor.py                                         :+:      :+:    :+:  #
+#                                                      +:+ +:+         +:+    #
+#   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
+#                                                  +#+#+#+#+#+   +#+          #
+#   Created: 2026/10/14 08:39:44 by mpinto-l            #+#    #+#            #
+#   Updated: 2026/10/14 08:39:59 by mpinto-l           ###   ########.fr      #
+#                                                                             #
+# ########################################################################### #
+
 from ex1 import HealingCreatureFactory, TransformCreatureFactory
 
 

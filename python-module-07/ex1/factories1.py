@@ -1,3 +1,16 @@
+#!/usr/bin/env python3
+# ########################################################################### #
+#   shebang: 1                                                                #
+#                                                          :::      ::::::::  #
+#   factories1.py                                        :+:      :+:    :+:  #
+#                                                      +:+ +:+         +:+    #
+#   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
+#                                                  +#+#+#+#+#+   +#+          #
+#   Created: 2026/10/14 08:39:39 by mpinto-l            #+#    #+#            #
+#   Updated: 2026/10/14 08:40:03 by mpinto-l           ###   ########.fr      #
+#                                                                             #
+# ########################################################################### #
+
 from ex0.factories0 import CreatureFactory
 from . import creatures1
 

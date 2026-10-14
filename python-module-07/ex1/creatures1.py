@@ -1,3 +1,16 @@
+#!/usr/bin/env python3
+# ########################################################################### #
+#   shebang: 1                                                                #
+#                                                          :::      ::::::::  #
+#   creatures1.py                                        :+:      :+:    :+:  #
+#                                                      +:+ +:+         +:+    #
+#   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
+#                                                  +#+#+#+#+#+   +#+          #
+#   Created: 2026/10/14 08:39:36 by mpinto-l            #+#    #+#            #
+#   Updated: 2026/10/14 08:40:05 by mpinto-l           ###   ########.fr      #
+#                                                                             #
+# ########################################################################### #
+
 from abc import ABC, abstractmethod
 from ex0.creatures0 import Creature
 

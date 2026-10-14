@@ -1,3 +1,16 @@
+#!/usr/bin/env python3
+# ########################################################################### #
+#   shebang: 1                                                                #
+#                                                          :::      ::::::::  #
+#   tournament.py                                        :+:      :+:    :+:  #
+#                                                      +:+ +:+         +:+    #
+#   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
+#                                                  +#+#+#+#+#+   +#+          #
+#   Created: 2026/10/14 08:39:47 by mpinto-l            #+#    #+#            #
+#   Updated: 2026/10/14 08:39:57 by mpinto-l           ###   ########.fr      #
+#                                                                             #
+# ########################################################################### #
+
 from typing import List, Tuple
 from ex0.creatures0 import Creature
 from ex0.factories0 import (
