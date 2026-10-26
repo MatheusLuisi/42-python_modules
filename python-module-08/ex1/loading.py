@@ -46,23 +46,31 @@ def check_dependencies(packages: list[str]) -> bool:
             version = importlib.metadata.version(pack)
             print_versions(pack, version)
         except importlib.metadata.PackageNotFoundError:
-            print(f"\n{pack} not found")
-            install_instructions()
+            print(f"\n[MISSING] {pack} not found")
             all_found = False
 
+    print()
     if not all_found:
         install_instructions()
 
     return all_found
 
 
+def show_pip_x_poetry() -> None:
+    is_poetry = "pypoetry" in sys.prefix
+    print("Environment manager:")
+    if is_poetry:
+        print(" - Poetry detected (versions come from pyproject.toml)")
+    else:
+        print(" - pip detected (versions come from requirements.txt)")
+    print(f" - Python prefix: {sys.prefix}\n")
+
+
 def generate_data(quantity: int):
     import numpy as np
 
-
-    rng: np.random.Generator = np.random.default_rng(seed=42)
-    data_generate = rng.normal(loc=0, scale=1, size=quantity)
-    return data_generate
+    rng = np.random.default_rng(seed=42)
+    return rng.normal(loc=0, scale=1, size=quantity)
 
 
 def check_venv() -> bool:
@@ -82,7 +90,7 @@ def create_image(df) -> None:
 
 
 def main() -> None:
-    packages: list[str] = ['pandas', 'numpy', 'requests', 'matplotlib']
+    packages: list[str] = ['pandas', 'numpy', 'matplotlib']
 
     print("LOADING STATUS: Loading programs...\n")
 
@@ -95,27 +103,25 @@ def main() -> None:
     if not check_dependencies(packages):
         return
 
-    else:
-        print("Checking dependencies:\n")
-        check_dependencies(packages)
-        try:
-            import pandas as pd # type: ignore[import-not-found]
-            print("Analyzing Matrix data...")
-            data_points = generate_data(1000)
-            data_frame = pd.DataFrame({"values": data_points})
+    show_pip_x_poetry()
 
-            print(f"Processing {len(data_frame)} data points")
-            print("Generating visualization...")
+    try:
+        import pandas as pd  # type: ignore[import-not-found]
 
-            create_image(data_frame)
+        print("Analyzing Matrix data...")
+        data_points = generate_data(1000)
+        data_frame = pd.DataFrame({"values": data_points})
 
-            print("Analysis complete!")
-            print("Resultst saved to: matrix_analysis.png\n")
+        print(f"Processing {len(data_frame)} data points...")
+        print("Generating visualization...")
 
-            print("Generating visualization...")
+        create_image(data_frame)
 
-        except ImportError as error:
-            print(error)
+        print("\nAnalysis complete!")
+        print("Results saved to: matrix_analysis.png")
+
+    except ImportError as error:
+        print(error)
 
 
 if __name__ == "__main__":
