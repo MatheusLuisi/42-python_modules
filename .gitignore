@@ -5,3 +5,9 @@ lazygit
 t.txt
 __pycache__
 test.py
+
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
