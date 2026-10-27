@@ -7,12 +7,13 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/10/14 11:10:25 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/10/14 16:40:51 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/10/27 09:08:09 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
 import sys
 import importlib.metadata
+from typing import Any
 
 
 def install_instructions() -> None:
@@ -66,8 +67,8 @@ def show_pip_x_poetry() -> None:
     print(f" - Python prefix: {sys.prefix}\n")
 
 
-def generate_data(quantity: int):
-    import numpy as np
+def generate_data(quantity: int) -> Any:
+    np = importlib.import_module("numpy")
 
     rng = np.random.default_rng(seed=42)
     return rng.normal(loc=0, scale=1, size=quantity)
@@ -78,7 +79,7 @@ def check_venv() -> bool:
 
 
 def create_image(df) -> None:
-    import matplotlib.pyplot as plt
+    plt = importlib.import_module("matplotlib.pyplot")
 
     plt.figure(figsize=(10, 6))
     plt.hist(df["values"], bins=30)
@@ -106,7 +107,7 @@ def main() -> None:
     show_pip_x_poetry()
 
     try:
-        import pandas as pd  # type: ignore[import-not-found]
+        pd = importlib.import_module("pandas")
 
         print("Analyzing Matrix data...")
         data_points = generate_data(1000)

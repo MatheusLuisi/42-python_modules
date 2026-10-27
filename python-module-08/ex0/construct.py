@@ -7,7 +7,7 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/10/14 08:39:11 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/10/14 10:59:55 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/10/27 09:14:42 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -41,7 +41,7 @@ def inside_matrix_message() -> None:
     print(f"Current Python: {check_python_version()}")
     print("Virtual Enviroment: None detected\n")
 
-    print("Warning: You're in the global environment!")
+    print("WARNING: You're in the global environment!")
     print("The machines can see everything you install.\n")
 
     print("To enter the construct, run:")
