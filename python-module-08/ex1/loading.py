@@ -7,7 +7,7 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/10/14 11:10:25 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/10/27 09:08:09 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/10/27 09:25:49 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -78,7 +78,7 @@ def check_venv() -> bool:
     return sys.prefix != sys.base_prefix
 
 
-def create_image(df) -> None:
+def create_image(df: Any) -> None:
     plt = importlib.import_module("matplotlib.pyplot")
 
     plt.figure(figsize=(10, 6))
