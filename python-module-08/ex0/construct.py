@@ -7,7 +7,7 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/10/14 08:39:11 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/10/27 09:14:42 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/10/27 09:43:16 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -20,7 +20,7 @@ def check_python_version() -> str:
     return f"{sys.executable} - {sys.version[0:4]}"
 
 
-def check_virtual_enviroment() -> str:
+def check_virtual_environment() -> str:
     return f"{os.path.basename(sys.prefix)}"
 
 
@@ -30,16 +30,21 @@ def matrix_status() -> bool:
 
 def get_package_installation_path() -> str:
     for path in site.getsitepackages():
-        if os.path.commonpath([sys.prefix, path]) == sys.prefix:
-            return path
+        try:
+            common_path = os.path.commonpath([sys.prefix, path])
+            if common_path == sys.prefix:
+                return path
+        except ValueError:
+            continue
+
     return "Package path not found"
 
 
-def inside_matrix_message() -> None:
+def outside_matrix_message() -> None:
     print("MATRIX STATUS: You're still plugged in\n")
 
     print(f"Current Python: {check_python_version()}")
-    print("Virtual Enviroment: None detected\n")
+    print("Virtual Environment: None detected\n")
 
     print("WARNING: You're in the global environment!")
     print("The machines can see everything you install.\n")
@@ -52,11 +57,11 @@ def inside_matrix_message() -> None:
     print("Then run this program again")
 
 
-def outside_matrix_message() -> None:
+def inside_construct_message() -> None:
     print("MATRIX STATUS: Welcome to the construct\n")
 
     print(f"Current Python: {check_python_version()}")
-    print(f"Virtual Enviroment: {check_virtual_enviroment()}")
+    print(f"Virtual Environment: {check_virtual_environment()}")
     print(f"Enviroment Path: {os.path.abspath(sys.prefix)}\n")
 
     print("SUCCESS: You're in an isolated enviroment!")
@@ -68,9 +73,9 @@ def outside_matrix_message() -> None:
 
 def main() -> None:
     if matrix_status():
-        outside_matrix_message()
+        inside_construct_message()
     else:
-        inside_matrix_message()
+        outside_matrix_message()
 
 
 if __name__ == "__main__":

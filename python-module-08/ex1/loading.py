@@ -7,7 +7,7 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/10/14 11:10:25 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/10/27 09:25:49 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/10/27 09:45:55 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -18,7 +18,7 @@ from typing import Any
 
 def install_instructions() -> None:
     print("-------------------------------------------------------")
-    print("Installig with pip: [pip install -r requirements.txt]\n")
+    print("Installing with pip: [pip install -r requirements.txt]\n")
     print("Installing with poetry: [poetry install]")
     print("poetry already detects the pyproject.toml file")
     print("-------------------------------------------------------\n")
@@ -58,12 +58,12 @@ def check_dependencies(packages: list[str]) -> bool:
 
 
 def show_pip_x_poetry() -> None:
-    is_poetry = "pypoetry" in sys.prefix
-    print("Environment manager:")
-    if is_poetry:
-        print(" - Poetry detected (versions come from pyproject.toml)")
-    else:
-        print(" - pip detected (versions come from requirements.txt)")
+    print("Dependency management:")
+    print(" - pip uses requirements.txt")
+    print("   Install with: pip install -r requirements.txt")
+    print(" - Poetry uses pyproject.toml")
+    print("   Install with: poetry install")
+    print(" - Both manage project dependencies")
     print(f" - Python prefix: {sys.prefix}\n")
 
 
@@ -122,7 +122,9 @@ def main() -> None:
         print("Results saved to: matrix_analysis.png")
 
     except ImportError as error:
-        print(error)
+        print("[ERROR] A required package could not be imported.")
+        print(f"Details: {error}")
+        print("Check your dependencies and install them again.")
 
 
 if __name__ == "__main__":
