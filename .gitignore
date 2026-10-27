@@ -6,6 +6,10 @@ t.txt
 __pycache__
 test.py
 
+# mod9
+data_generator.py
+data_exporter.py
+
 # Python virtual environments
 .venv/
 venv/
