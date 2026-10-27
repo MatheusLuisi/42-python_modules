@@ -1,189 +1,97 @@
+#!/usr/bin/env python3
+# ########################################################################### #
+#   shebang: 1                                                                #
+#                                                          :::      ::::::::  #
+#   oracle.py                                            :+:      :+:    :+:  #
+#                                                      +:+ +:+         +:+    #
+#   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
+#                                                  +#+#+#+#+#+   +#+          #
+#   Created: 2026/10/27 10:02:13 by mpinto-l            #+#    #+#            #
+#   Updated: 2026/10/27 10:03:05 by mpinto-l           ###   ########.fr      #
+#                                                                             #
+# ########################################################################### #
+
 import os
 import sys
 
 try:
-    from dotenv import load_dotenv, dotenv_values
+    from dotenv import load_dotenv
 except ImportError:
-    print("python-dotenv not found")
-    print("Install it with: pip install -r requirements.txt")
+    print("Error: python-dotenv is not installed")
+    print("Run: pip install -r requirements.txt")
     sys.exit(1)
 
 
-KEYS = [
-    "MATRIX_MODE",
-    "DATABASE_URL",
-    "API_KEY",
-    "LOG_LEVEL",
-    "ZION_ENDPOINT",
-]
-
-
 def load_config() -> dict[str, str | None]:
-    load_dotenv(override=False)
+    load_dotenv()
 
-    config: dict[str, str | None] = {}
-
-    for key in KEYS:
-        value = os.environ.get(key)
-        config[key] = value
+    config: dict[str, str | None] = {
+        "MATRIX_MODE": os.getenv("MATRIX_MODE", "development"),
+        "DATABASE_URL": os.getenv("DATABASE_URL"),
+        "API_KEY": os.getenv("API_KEY"),
+        "LOG_LEVEL": os.getenv("LOG_LEVEL", "INFO"),
+        "ZION_ENDPOINT": os.getenv("ZION_ENDPOINT"),
+    }
 
     return config
 
 
-def validate_config(config: dict[str, str | None]) -> None:
-    for key in KEYS:
-        value = config[key]
+def check_config(config: dict[str, str | None]) -> bool:
+    valid = True
 
+    for key, value in config.items():
         if not value:
             print(f"[WARNING] {key} is missing")
+            valid = False
 
-    mode = config["MATRIX_MODE"]
-
-    if mode != "development" and mode != "production":
-        print("[WARNING] MATRIX_MODE defaulting to development")
+    if config["MATRIX_MODE"] not in ("development", "production"):
+        print("[WARNING] Invalid mode. Using development")
         config["MATRIX_MODE"] = "development"
 
-    if not config["LOG_LEVEL"]:
-        config["LOG_LEVEL"] = "INFO"
-
-    print()
+    return valid
 
 
 def print_config(config: dict[str, str | None]) -> None:
     mode = config["MATRIX_MODE"]
 
-    print("Configuration loaded:")
+    print("\nConfiguration loaded:")
     print(f"Mode: {mode}")
 
-    database_url = config["DATABASE_URL"]
-
-    if not database_url:
-        print("Database: Not configured")
-    elif mode == "development":
-        print("Database: Connected to local instance")
+    if config["DATABASE_URL"]:
+        if mode == "development":
+            print("Database: Local configuration loaded")
+        else:
+            print("Database: Production configuration loaded")
     else:
-        print("Database: Connected to production cluster")
+        print("Database: Not configured")
 
-    api_key = config["API_KEY"]
-
-    if api_key:
-        print("API Access: Authenticated")
+    if config["API_KEY"]:
+        print("API Access: Key configured")
     else:
         print("API Access: Missing key")
 
-    log_level = config["LOG_LEVEL"]
-    print(f"Log Level: {log_level}")
+    print(f"Log Level: {config['LOG_LEVEL']}")
 
-    zion_endpoint = config["ZION_ENDPOINT"]
-
-    if not zion_endpoint:
+    if config["ZION_ENDPOINT"]:
+        print("Zion Network: Endpoint configured")
+    else:
         print("Zion Network: Offline")
-    elif mode == "development":
-        print(f"Zion Network: Online ({zion_endpoint})")
-    else:
-        print("Zion Network: Online (endpoint hidden)")
-
-    print()
-
-
-def has_hardcoded_secrets(
-    config: dict[str, str | None]
-) -> bool:
-    try:
-        with open(__file__, "r", encoding="utf-8") as file:
-            source = file.read()
-    except OSError:
-        return False
-
-    api_key = config["API_KEY"]
-    database_url = config["DATABASE_URL"]
-
-    if api_key and api_key in source:
-        return True
-
-    if database_url and database_url in source:
-        return True
-
-    return False
-
-
-def env_in_gitignore() -> bool:
-    try:
-        with open(".gitignore", "r", encoding="utf-8") as file:
-            lines = file.readlines()
-    except OSError:
-        return False
-
-    for line in lines:
-        line = line.strip()
-
-        if line == ".env":
-            return True
-
-    return False
-
-
-def active_overrides() -> list[str]:
-    file_values = dotenv_values(".env")
-    overrides: list[str] = []
-
-    for key in KEYS:
-        env_value = os.environ.get(key)
-
-        if not env_value:
-            continue
-
-        if key not in file_values:
-            continue
-
-        file_value = file_values[key]
-
-        if env_value != file_value:
-            overrides.append(key)
-
-    return overrides
-
-
-def security_check(config: dict[str, str | None]) -> None:
-    print("Environment security check:")
-
-    if has_hardcoded_secrets(config):
-        print("[WARNING] A configured value was found in the source code")
-    else:
-        print("[INFO] No current config value found in source")
-        print("(basic check only)")
-
-    if os.path.exists(".env"):
-        if env_in_gitignore():
-            print("[OK] .env file properly configured")
-        else:
-            print("[FAIL] .env is not in .gitignore")
-    else:
-        print("[WARNING] .env file not found (cp .env.example .env)")
-
-    overrides = active_overrides()
-
-    if overrides:
-        print(
-            "[OK] Environment overrides active: "
-            + ", ".join(overrides)
-        )
-    else:
-        print("[INFO] No environment overrides detected")
-
-    print()
 
 
 def main() -> None:
     print("ORACLE STATUS: Reading the Matrix...\n")
 
+    if sys.prefix == sys.base_prefix:
+        print("No virtual environment detected")
+        print("Run: python3 -m venv .venv")
+        print("Then activate it and install requirements.txt")
+        return
+
     config = load_config()
-
-    validate_config(config)
+    check_config(config)
     print_config(config)
-    security_check(config)
 
-    print("The Oracle sees all configurations.")
+    print("\nThe Oracle sees all configurations.")
 
 
 if __name__ == "__main__":
