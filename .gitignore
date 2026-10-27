@@ -9,6 +9,7 @@ test.py
 # mod9
 data_generator.py
 data_exporter.py
+generated_data
 
 # Python virtual environments
 .venv/
