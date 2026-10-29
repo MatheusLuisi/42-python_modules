@@ -7,7 +7,7 @@
 #   By: mpinto-l <mpinto-l@student.42.fr>            +#+  +:+       +#+       #
 #                                                  +#+#+#+#+#+   +#+          #
 #   Created: 2026/10/27 10:02:13 by mpinto-l            #+#    #+#            #
-#   Updated: 2026/10/27 14:06:14 by mpinto-l           ###   ########.fr      #
+#   Updated: 2026/10/28 15:02:08 by mpinto-l           ###   ########.fr      #
 #                                                                             #
 # ########################################################################### #
 
@@ -47,6 +47,7 @@ def check_config(config: dict[str, str | None]) -> bool:
     if config["MATRIX_MODE"] not in ("development", "production"):
         print("[WARNING] Invalid mode. Using development")
         config["MATRIX_MODE"] = "development"
+        valid = False
 
     return valid
 
@@ -72,24 +73,79 @@ def print_config(config: dict[str, str | None]) -> None:
 
     print(f"Log Level: {config['LOG_LEVEL']}")
 
-    if config["ZION_ENDPOINT"]:
-        print("Zion Network: Endpoint configured")
-    else:
+    zion_endpoint = config["ZION_ENDPOINT"]
+
+    if not zion_endpoint:
         print("Zion Network: Offline")
+    elif mode == "development":
+        print(f"Zion Network: Online ({zion_endpoint})")
+    else:
+        print("Zion Network: Online (endpoint hidden)")
+
+
+def has_hardcoded_secrets(config: dict[str, str | None]) -> bool:
+    try:
+        with open(__file__, "r", encoding="utf-8") as file:
+            source = file.read()
+    except OSError:
+        return False
+
+    for key in ("API_KEY", "DATABASE_URL"):
+        value = config[key]
+
+        if value and value in source:
+            return True
+
+    return False
+
+
+def env_in_gitignore() -> bool:
+    try:
+        with open(".gitignore", "r", encoding="utf-8") as file:
+            lines = []
+
+            for line in file:
+                line = line.strip()
+                lines.append(line)
+
+    except OSError:
+        return False
+
+    for line in lines:
+        if line == ".env":
+            return True
+
+    return False
+
+
+def security_check(config: dict[str, str | None]) -> None:
+    print("\nEnvironment security check:")
+
+    if has_hardcoded_secrets(config):
+        print("[WARNING] A config value was found in the source code")
+    else:
+        print("[OK] No config value found in the source code")
+
+    if not os.path.exists(".env"):
+        print("[WARNING] .env file not found (cp .env.example .env)")
+    elif env_in_gitignore():
+        print("[OK] .env file properly configured")
+    else:
+        print("[FAIL] .env is not in .gitignore")
 
 
 def main() -> None:
     print("ORACLE STATUS: Reading the Matrix...\n")
 
-    if sys.prefix == sys.base_prefix:
-        print("No virtual environment detected")
-        print("Run: python3 -m venv .venv")
-        print("Then activate it and install requirements.txt")
-        return
-
     config = load_config()
-    check_config(config)
+    valid = check_config(config)
+
     print_config(config)
+    security_check(config)
+
+    if not valid:
+        print("\n[WARNING] Some configurations need attention.")
+        return
 
     print("\nThe Oracle sees all configurations.")
 
